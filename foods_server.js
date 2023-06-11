@@ -10,9 +10,16 @@ let foods = [
   { id: 5, name: 'Burger', cuisine: 'American', price: 8.99 }
 ];
 
-//define GET endpoint '/data' & when a arequest is made to '/data', the server respons array of foods as JSON data using res.json() methid
+app.use(express.static('public'));
+
+// Define GET endpoint '/data' to return the array of foods as JSON data
 app.get('/data', (req, res) => {
   res.json(foods);
+});
+
+// Serve the index.html file as the default page
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => {

@@ -13,6 +13,3 @@ fetch('http://localhost:3000/data')
   .catch((error) => {
     console.error('Error fetching data:', error);
   });
-
-ulElement.innerHTML = '<li>I am an LI tag!</li>';
-
